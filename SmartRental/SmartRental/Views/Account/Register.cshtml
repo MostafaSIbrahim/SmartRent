@@ -1,0 +1,86 @@
+﻿@model SmartRental.DTO.RegisterDTO
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3 class="mb-0">Create Account</h3>
+                </div>
+
+                <div class="card-body p-4">
+                    <form asp-action="Register" asp-controller="Account" method="post">
+                        @Html.AntiForgeryToken()
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label"></label>
+                            <input asp-for="Name" class="form-control" placeholder="Enter your name" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label"></label>
+                            <input asp-for="Email" class="form-control" placeholder="Enter your email" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Phone Number</label>
+                            <input name="PhoneNumber[0]" class="form-control" placeholder="Enter phone number" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Second Phone Number Optional</label>
+                            <input name="PhoneNumber[1]" class="form-control" placeholder="Enter another phone number" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="NationalID" class="form-label">National ID</label>
+                            <input asp-for="NationalID" class="form-control" placeholder="Enter 14-digit national ID" />
+                            <span asp-validation-for="NationalID" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Password" class="form-label"></label>
+                            <input asp-for="Password" type="password" class="form-control" placeholder="Enter password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Role" class="form-label"></label>
+                            <select asp-for="Role" class="form-select">
+                                <option value="">Select role</option>
+                                <option value="Owner">Owner</option>
+                                <option value="Tenant">Tenant</option>
+                            </select>
+                            <span asp-validation-for="Role" class="text-danger"></span>
+                        </div>
+
+                        <input type="hidden" asp-for="Photo" value="default-user.png" />
+
+                        <button type="submit" class="btn btn-primary w-100">
+                            Register
+                        </button>
+                    </form>
+                </div>
+
+                <div class="card-footer text-center">
+                    <span>Already have an account?</span>
+                    <a asp-controller="Account" asp-action="Login">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
