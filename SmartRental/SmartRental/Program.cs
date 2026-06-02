@@ -8,7 +8,7 @@ using SmartRental.Data;
 using SmartRental.Models.Entites.Identity;
 using SmartRental.Reporisitory;
 using SmartRental.Repository;
-using SmartRental.Services;
+//using SmartRental.Services;
 using System.Text;
 
 namespace SmartRental
@@ -47,10 +47,11 @@ namespace SmartRental
                              .AddEntityFrameworkStores<AppIdentityDbContext>()
                              .AddDefaultTokenProviders();
 
-          
+
 
             #endregion
            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+           builder.Services.AddScoped<IApartmentRepository,ApartmentRepository>();
             var app = builder.Build();
             #region Update Database
             using var scope = app.Services.CreateScope();
@@ -96,7 +97,7 @@ namespace SmartRental
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
-          await  app.RunAsync();
+          await  app.RunAsync();    
         }
     }
 }
