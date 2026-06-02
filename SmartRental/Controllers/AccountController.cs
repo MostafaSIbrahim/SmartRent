@@ -5,7 +5,7 @@ using SmartRental.Models.Entites;
 using SmartRental.Models.Entites.Identity;
 using SmartRental.Reporisitory;
 using SmartRental.Repository;
-using SmartRental.Services;
+//using SmartRental.Services;
 
 namespace SmartRental.Controllers
 {

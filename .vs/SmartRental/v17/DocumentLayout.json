@@ -1,7 +1,28 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Admin\\OneDrive\\Documents\\MyDevwork\\MCIT\\Final-Project\\SmartRental\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\admin\\onedrive\\documents\\mydevwork\\mcit\\final-project\\smartrental\\smartrental\\controllers\\ownercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|solutionrelative:smartrental\\controllers\\ownercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\admin\\onedrive\\documents\\mydevwork\\mcit\\final-project\\smartrental\\smartrental\\repository\\apartmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|solutionrelative:smartrental\\repository\\apartmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\admin\\onedrive\\documents\\mydevwork\\mcit\\final-project\\smartrental\\smartrental\\repository\\iapartmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|solutionrelative:smartrental\\repository\\iapartmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\admin\\onedrive\\documents\\mydevwork\\mcit\\final-project\\smartrental\\smartrental\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|solutionrelative:smartrental\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\admin\\onedrive\\documents\\mydevwork\\mcit\\final-project\\smartrental\\smartrental\\views\\owner\\ownerindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|solutionrelative:smartrental\\views\\owner\\ownerindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +30,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Documents\\MyDevwork\\MCIT\\Final-Project\\SmartRental\\SmartRental\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "SmartRental\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Documents\\MyDevwork\\MCIT\\Final-Project\\SmartRental\\SmartRental\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "SmartRental\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAABuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-02T22:03:31.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OwnerIndex.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Documents\\MyDevwork\\MCIT\\Final-Project\\SmartRental\\SmartRental\\Views\\Owner\\OwnerIndex.cshtml",
+              "RelativeDocumentMoniker": "SmartRental\\Views\\Owner\\OwnerIndex.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Documents\\MyDevwork\\MCIT\\Final-Project\\SmartRental\\SmartRental\\Views\\Owner\\OwnerIndex.cshtml",
+              "RelativeToolTip": "SmartRental\\Views\\Owner\\OwnerIndex.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-02T21:58:07.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OwnerController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Documents\\MyDevwork\\MCIT\\Final-Project\\SmartRental\\SmartRental\\Controllers\\OwnerController.cs",
+              "RelativeDocumentMoniker": "SmartRental\\Controllers\\OwnerController.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Documents\\MyDevwork\\MCIT\\Final-Project\\SmartRental\\SmartRental\\Controllers\\OwnerController.cs",
+              "RelativeToolTip": "SmartRental\\Controllers\\OwnerController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAzwCsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T21:54:13.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IApartmentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Documents\\MyDevwork\\MCIT\\Final-Project\\SmartRental\\SmartRental\\Repository\\IApartmentRepository.cs",
+              "RelativeDocumentMoniker": "SmartRental\\Repository\\IApartmentRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Documents\\MyDevwork\\MCIT\\Final-Project\\SmartRental\\SmartRental\\Repository\\IApartmentRepository.cs",
+              "RelativeToolTip": "SmartRental\\Repository\\IApartmentRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA3wA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T21:31:54.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApartmentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Documents\\MyDevwork\\MCIT\\Final-Project\\SmartRental\\SmartRental\\Repository\\ApartmentRepository.cs",
+              "RelativeDocumentMoniker": "SmartRental\\Repository\\ApartmentRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Documents\\MyDevwork\\MCIT\\Final-Project\\SmartRental\\SmartRental\\Repository\\ApartmentRepository.cs",
+              "RelativeToolTip": "SmartRental\\Repository\\ApartmentRepository.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAkwDsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T21:22:13.855Z",
+              "EditorCaption": ""
             }
           ]
         }

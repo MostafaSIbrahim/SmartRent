@@ -8,8 +8,7 @@ using SmartRental.Data;
 using SmartRental.Models.Entites.Identity;
 using SmartRental.Reporisitory;
 using SmartRental.Repository;
-using SmartRental.Services;
-using System;
+//using SmartRental.Services;
 using System.Text;
 
 namespace SmartRental
@@ -38,7 +37,7 @@ namespace SmartRental
                 );
             });
             #endregion
-            #region Token and Authentication
+            #region  and Authentication
             builder.Services.AddIdentity<AppUser, IdentityRole>(options => {
                 options.User.AllowedUserNameCharacters =
                     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+ ";
@@ -48,37 +47,11 @@ namespace SmartRental
                              .AddEntityFrameworkStores<AppIdentityDbContext>()
                              .AddDefaultTokenProviders();
 
-            builder.Services.AddScoped<TokenService>();
-            builder.Services
-                   .AddAuthentication()
-                   .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
-                   {
-                       options.TokenValidationParameters = new TokenValidationParameters
-                       {
-                           ValidateIssuer = true,
-                           ValidateAudience = true,
-                           ValidateLifetime = true,
-                           ValidateIssuerSigningKey = true,
-
-                           ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
-                           ValidAudience = builder.Configuration["JWT:ValidAudience"],
-
-                           IssuerSigningKey = new SymmetricSecurityKey(
-                               Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"])
-                           )
-                       };
-                   });
 
 
             #endregion
            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            builder.Services.AddDbContext<SmartRentalContext>(options =>
-             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-            builder.Services.AddDbContext<AppIdentityDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection")));
-
-
+           builder.Services.AddScoped<IApartmentRepository,ApartmentRepository>();
             var app = builder.Build();
             #region Update Database
             using var scope = app.Services.CreateScope();
@@ -104,7 +77,6 @@ namespace SmartRental
                 logger.LogError(ex, "An error occurred during applying the migration.");
             }
             #endregion
-            
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
@@ -125,7 +97,7 @@ namespace SmartRental
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
-          await  app.RunAsync();
+          await  app.RunAsync();    
         }
     }
 }
