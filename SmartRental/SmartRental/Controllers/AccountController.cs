@@ -5,6 +5,7 @@ using SmartRental.Models.Entites;
 using SmartRental.Models.Entites.Identity;
 using SmartRental.Reporisitory;
 using SmartRental.Repository;
+using System.Data;
 //using SmartRental.Services;
 
 namespace SmartRental.Controllers
@@ -141,7 +142,18 @@ namespace SmartRental.Controllers
                 ModelState.AddModelError(string.Empty, "Invalid email or password.");
                 return View(loginDTO);
             }
-
+            var roles = await _userManager.GetRolesAsync(user);
+            var appUserId = user.Id;
+            if (roles.Contains("Owner"))
+            {
+                var owner = await _ownerRepository.GetFirstOrDefaultAsync(o => o.AppUserId == appUserId);
+                HttpContext.Session.SetInt32("OwnerId", owner.Id);
+            }
+            else if (roles.Contains("Tenant"))
+            {
+                var tenant = await _tenantRepository.GetFirstOrDefaultAsync(t => t.AppUserId == appUserId);
+                HttpContext.Session.SetInt32("TenantId", tenant.Id);
+            }
             return RedirectToAction("Index", "Home");
         }
         public async Task<bool> CheckEmail(string email)
