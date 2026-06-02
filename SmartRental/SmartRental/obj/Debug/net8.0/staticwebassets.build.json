@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZhqyYlRUgW02E4d2gDUdR5sHuy7VBmMbjgM3ZBDi3OQ=",
+  "Hash": "Cz7QW68on9S14xzKW0HWcge32tzyo/n5kojyLqkRLq8=",
   "Source": "SmartRental",
   "BasePath": "_content/SmartRental",
   "Mode": "Default",
@@ -120,6 +120,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\11d13ed8-58e6-4b6f-ae94-535fb47c4a02.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\DELL\\Documents\\GitHub\\SmartRent\\SmartRental\\SmartRental\\wwwroot\\Images\\2c9977c0-5137-421f-a834-15fe6055de3a.webp",
+      "SourceId": "SmartRental",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL\\Documents\\GitHub\\SmartRent\\SmartRental\\SmartRental\\wwwroot\\",
+      "BasePath": "_content/SmartRental",
+      "RelativePath": "Images/2c9977c0-5137-421f-a834-15fe6055de3a#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "oxnjpi5tx5",
+      "Integrity": "7NCbj8VPH61QtNGIx3kHevGODeePvDBpD/dUdSD8gdA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\2c9977c0-5137-421f-a834-15fe6055de3a.webp"
     },
     {
       "Identity": "C:\\Users\\DELL\\Documents\\GitHub\\SmartRent\\SmartRental\\SmartRental\\wwwroot\\Images\\54dd612f-b929-40ca-8272-871725c9d9f5.jpg",
@@ -1647,6 +1668,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-2j2DF+XVleBri+eGML3gSzjV/1ttFqSEXHyG4DUWXUA="
+        }
+      ]
+    },
+    {
+      "Route": "Images/2c9977c0-5137-421f-a834-15fe6055de3a.oxnjpi5tx5.webp",
+      "AssetFile": "C:\\Users\\DELL\\Documents\\GitHub\\SmartRent\\SmartRental\\SmartRental\\wwwroot\\Images\\2c9977c0-5137-421f-a834-15fe6055de3a.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "69494"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7NCbj8VPH61QtNGIx3kHevGODeePvDBpD/dUdSD8gdA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Jun 2026 19:29:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oxnjpi5tx5"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/2c9977c0-5137-421f-a834-15fe6055de3a.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7NCbj8VPH61QtNGIx3kHevGODeePvDBpD/dUdSD8gdA="
+        }
+      ]
+    },
+    {
+      "Route": "Images/2c9977c0-5137-421f-a834-15fe6055de3a.webp",
+      "AssetFile": "C:\\Users\\DELL\\Documents\\GitHub\\SmartRent\\SmartRental\\SmartRental\\wwwroot\\Images\\2c9977c0-5137-421f-a834-15fe6055de3a.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "69494"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7NCbj8VPH61QtNGIx3kHevGODeePvDBpD/dUdSD8gdA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 02 Jun 2026 19:29:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7NCbj8VPH61QtNGIx3kHevGODeePvDBpD/dUdSD8gdA="
         }
       ]
     },

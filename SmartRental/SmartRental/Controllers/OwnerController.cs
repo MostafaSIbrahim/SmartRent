@@ -18,6 +18,12 @@ namespace SmartRental.Controllers
         }
 
         [HttpGet]
+
+        public IActionResult index()
+        {
+
+            return View("index");
+        }
         public IActionResult AddApartment()
         {
 
@@ -83,7 +89,7 @@ namespace SmartRental.Controllers
             await repo.SaveChangeAsync();
 
 
-            return RedirectToAction("AddApartment");
+            return RedirectToAction("index");
         }
 
 
@@ -182,7 +188,7 @@ namespace SmartRental.Controllers
 
             await repo.SaveChangeAsync();
 
-            return RedirectToAction("AddApartment");
+            return RedirectToAction("index");
         }
 
 
