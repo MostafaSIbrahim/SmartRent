@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartRental")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c31e7d0df8caf84c179a6fa3311fb8f65658d60")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartRental")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartRental")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

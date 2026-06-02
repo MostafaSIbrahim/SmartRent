@@ -1,5 +1,4 @@
-﻿
-using SmartRental.Models.Entites;
+﻿using SmartRental.Models.Entites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +15,7 @@ namespace SmartRental.Repository
         public void Update(T entity);
         public void Delete(T entity);
         Task<int> SaveChangesAsync();
+
 
 
     }
