@@ -5,7 +5,7 @@ using SmartRental.Models.Entites;
 using SmartRental.Models.Entites.Identity;
 using SmartRental.Reporisitory;
 using SmartRental.Repository;
-using SmartRental.Services;
+//using SmartRental.Services;
 
 namespace SmartRental.Controllers
 {
@@ -19,8 +19,8 @@ namespace SmartRental.Controllers
         public AccountController(
             UserManager<AppUser> userManager,
             SignInManager<AppUser> signInManager,
-    IGenericRepository<Owner> ownerRepository,
-    IGenericRepository<Tenant> tenantRepository)
+            IGenericRepository<Owner> ownerRepository,
+            IGenericRepository<Tenant> tenantRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -40,29 +40,32 @@ namespace SmartRental.Controllers
         {
             if (!ModelState.IsValid)
                 return View(registerDTO);
-            if (await CheckEmail(registerDTO.Email))
+
+            // Check if email already exists
+            var existingUser = await _userManager.FindByEmailAsync(registerDTO.Email);
+            if (existingUser != null)
             {
                 ModelState.AddModelError(string.Empty, "Email is already in use.");
                 return View(registerDTO);
             }
+
+            // Create AppUser
             var user = new AppUser
             {
                 UserName = new string(registerDTO.Name
-    .Where(char.IsLetterOrDigit)
-    .ToArray()),
+                    .Where(char.IsLetterOrDigit)
+                    .ToArray()),
                 Email = registerDTO.Email,
                 NationalID = registerDTO.NationalID,
                 Photo = registerDTO.Photo,
                 CreatedAt = DateTime.UtcNow,
                 Phones = registerDTO.PhoneNumber?
                     .Where(p => !string.IsNullOrWhiteSpace(p))
-                    .Select(p => new Phones
-                    {
-                        PhoneNumber = p
-                    })
+                    .Select(p => new Phones { PhoneNumber = p })
                     .ToList() ?? new List<Phones>()
             };
 
+            // Create user in Identity
             var result = await _userManager.CreateAsync(user, registerDTO.Password);
 
             if (!result.Succeeded)
@@ -73,35 +76,37 @@ namespace SmartRental.Controllers
                 return View(registerDTO);
             }
 
+            // Assign role
             if (registerDTO.Role == "Owner")
                 await _userManager.AddToRoleAsync(user, "Owner");
             else if (registerDTO.Role == "Tenant")
-            {
                 await _userManager.AddToRoleAsync(user, "Tenant");
-            }
 
+            // Sign in user
             await _signInManager.SignInAsync(user, isPersistent: false);
-            
+
+            // Add domain-specific entity (Owner or Tenant)
             if (registerDTO.Role == "Owner")
             {
-                var owner = new Owner
-                {
-                    AppUserId = user.Id,
-                };
+                var owner = new Owner { AppUserId = user.Id };
                 await _ownerRepository.AddAsync(owner);
                 await _ownerRepository.SaveChangesAsync();
-
             }
             else if (registerDTO.Role == "Tenant")
             {
+                if (!registerDTO.UniversityId.HasValue)
+                {
+                    ModelState.AddModelError(string.Empty, "University is required for tenants.");
+                    return View(registerDTO);
+                }
+
                 var tenant = new Tenant
                 {
                     AppUserId = user.Id,
                     UniversityId = registerDTO.UniversityId.Value
-
                 };
                 await _tenantRepository.AddAsync(tenant);
-                await _tenantRepository.SaveChangesAsync();  
+                await _tenantRepository.SaveChangesAsync();
             }
 
             return RedirectToAction("Index", "Home");
@@ -146,5 +151,14 @@ namespace SmartRental.Controllers
         }
         public async Task<bool> CheckEmail(string email)
               => await _userManager.FindByEmailAsync(email) is not null;
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
+
     }
+
 }

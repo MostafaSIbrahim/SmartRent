@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SmartRental.Models.Entites;
 using SmartRental.Repository;
 using SmartRental.ViewModel;
@@ -23,6 +24,34 @@ namespace SmartRental.Controllers
         {
 
             return View("index");
+        }
+        [Authorize(Roles = "Owner")]
+        public IActionResult OwnerIndex()
+        {
+            var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+            {
+                return Unauthorized();
+            }
+
+            
+            var appUserId = userIdClaim.Value;
+
+           
+            var owner = repo.GetOwnerByAppUserId(appUserId); 
+            if (owner == null)
+            {
+                return BadRequest("Owner record not found for this user.");
+            }
+
+      
+            var apartments = repo.GetByOwnerId(owner.Id);
+            if (apartments == null || !apartments.Any())
+            {
+                return View("OwnerIndex", new List<Apartment>()); 
+            }
+            return View(apartments);
+          
         }
         public IActionResult AddApartment()
         {

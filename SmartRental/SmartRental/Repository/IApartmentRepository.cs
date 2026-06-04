@@ -9,5 +9,7 @@ namespace SmartRental.Repository
         public Task DeleteAsync(int id);
         public Task SaveChangeAsync();
         Task<Apartment?> GetByIdAsync(int id);
+        IEnumerable<Apartment> GetByOwnerId(int ownerId);
+        Owner GetOwnerByAppUserId(string appUserId);
     }
 }

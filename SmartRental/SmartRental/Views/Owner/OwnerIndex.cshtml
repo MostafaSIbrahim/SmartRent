@@ -1,0 +1,29 @@
+﻿@using SmartRental.Models.Entites
+@model IEnumerable<Apartment>
+
+<h2>My Apartments</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Appartment Number</th>
+            <th>Building Number</th>
+            <th>Street Name</th>
+            <th>City</th>
+            <th>Availability Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var apartment in Model)
+        {
+            <tr>
+                <td>@apartment.ApartmentNumber</td>
+                <td>@apartment.BuildingNumber</td>
+                <td>@apartment.StreetName</td>
+                <td>@apartment.City</td>
+                <td>@apartment.AvailabilityStatus</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="AddApartment" class="btn btn-primary">Add New Apartment</a>

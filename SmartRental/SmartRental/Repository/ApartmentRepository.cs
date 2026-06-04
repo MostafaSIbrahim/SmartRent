@@ -51,5 +51,17 @@ namespace SmartRental.Repository
                                 .FirstOrDefaultAsync(a => a.Id == id);
         }
 
+        public IEnumerable<Apartment> GetByOwnerId(int ownerId)
+        {
+            return context.Apartments
+        .Where(a => a.OwnerId == ownerId)
+        .ToList();
+        }
+        public Owner GetOwnerByAppUserId(string appUserId)
+        {
+            return context.Owners.FirstOrDefault(o => o.AppUserId == appUserId);
+        }
+
+        
     }
 }
