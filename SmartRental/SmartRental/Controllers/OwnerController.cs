@@ -6,6 +6,7 @@ using SmartRental.ViewModel;
 
 namespace SmartRental.Controllers
 {
+    [Authorize(Roles = "Owner")]
     public class OwnerController : Controller
     {
         private readonly IApartmentRepository repo;
@@ -20,12 +21,33 @@ namespace SmartRental.Controllers
 
         [HttpGet]
 
-        public IActionResult index()
+        public async Task<IActionResult> index()
         {
+            var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+            {
+                return Unauthorized();
+            }
 
-            return View("index");
+
+            var appUserId = userIdClaim.Value;
+
+
+            var owner = repo.GetOwnerByAppUserId(appUserId);
+            if (owner == null)
+            {
+                return BadRequest("Owner record not found for this user.");
+            }
+
+
+            var apartments = repo.GetByOwnerId(owner.Id);
+            if (apartments == null || !apartments.Any())
+            {
+                return View("OwnerIndex", new List<Apartment>());
+            }
+            return View(apartments);
         }
-        [Authorize(Roles = "Owner")]
+        
         public IActionResult OwnerIndex()
         {
             var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
@@ -53,6 +75,7 @@ namespace SmartRental.Controllers
             return View(apartments);
           
         }
+
         public IActionResult AddApartment()
         {
 
@@ -66,7 +89,12 @@ namespace SmartRental.Controllers
             {
                 return View("AddApartment", apartmentVM);
             }
-
+            var appUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if (appUserId == null)
+            {
+                return Unauthorized();
+            }
+            var owner = repo.GetOwnerByAppUserId(appUserId);
             Apartment apartment = new Apartment()
             {
                 Rooms = apartmentVM.Rooms,
@@ -81,7 +109,7 @@ namespace SmartRental.Controllers
                 BuildingNumber = apartmentVM.BuildingNumber,
                 ApartmentNumber = apartmentVM.ApartmentNumber,
                 FloorNumber = apartmentVM.FloorNumber,
-                OwnerId = apartmentVM.OwnerId
+                OwnerId = owner.Id,
             };
             if (apartmentVM.image != null && apartmentVM.image.Count > 0)
             {
@@ -123,6 +151,7 @@ namespace SmartRental.Controllers
 
 
         [HttpGet]
+        
         public async Task<IActionResult> Update(int id)
         {
             Apartment? apartment = await repo.GetByIdAsync(id);
@@ -159,6 +188,7 @@ namespace SmartRental.Controllers
             return View(vm);
         }
         [HttpPost]
+        
         public async Task<IActionResult> Update(ApartmentVM apartmentVM)
         {
             if (!ModelState.IsValid)
@@ -169,7 +199,12 @@ namespace SmartRental.Controllers
 
             if (apartment == null)
                 return NotFound();
-
+            var appUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if (appUserId == null)
+            {
+                return Unauthorized();
+            }
+            var owner = repo.GetOwnerByAppUserId(appUserId);
             apartment.Rooms = apartmentVM.Rooms;
             apartment.Bathrooms = apartmentVM.Bathrooms;
             apartment.MaxTenants = apartmentVM.MaxTenants;
@@ -182,7 +217,7 @@ namespace SmartRental.Controllers
             apartment.BuildingNumber = apartmentVM.BuildingNumber;
             apartment.ApartmentNumber = apartmentVM.ApartmentNumber;
             apartment.FloorNumber = apartmentVM.FloorNumber;
-            apartment.OwnerId = apartmentVM.OwnerId;
+            apartment.OwnerId = owner.Id;
 
             if (apartmentVM.image != null && apartmentVM.image.Count > 0)
             {
@@ -220,6 +255,22 @@ namespace SmartRental.Controllers
             return RedirectToAction("index");
         }
 
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            try
+            {
+                await repo.DeleteAsync(id);
+                await repo.SaveChangeAsync();
+                TempData["SuccessMessage"] = "Apartment deleted successfully.";
+                return RedirectToAction("OwnerIndex");
+            }
+            catch (KeyNotFoundException ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+                return RedirectToAction("OwnerIndex");
+            }
+           
+        }
 
 
     }

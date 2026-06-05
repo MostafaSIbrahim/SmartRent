@@ -1,12 +1,112 @@
-﻿
+﻿@using SmartRental.Models.Entites
+@model IEnumerable<SmartRental.Models.Entites.Apartment>
 @{
-    ViewData["Title"] = "index";
+    ViewData["Title"] = "Home Page";
 }
 
-<div class="container mt-5">
-    <div class="alert alert-success text-center">
-        <h2>✅ Operation Completed Successfully</h2>
-        <p>Your request has been processed successfully.</p>
-    </div>
+<div class="container mt-4">
+    <h1 class="mb-4 text-center">Available Apartments</h1>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="row g-4">
+            @foreach (var apartment in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                @apartment.City - @apartment.StreetName
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                @apartment.Description
+                            </p>
+
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item">
+                                    <strong>Rooms:</strong> @apartment.Rooms
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Bathrooms:</strong> @apartment.Bathrooms
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Max Tenants:</strong> @apartment.MaxTenants
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Floor:</strong> @apartment.FloorNumber
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Apartment No:</strong> @apartment.ApartmentNumber
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Gender:</strong> @apartment.Gender
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Status:</strong> @apartment.AvailabilityStatus
+                                </li>
+                            </ul>
+
+                            <h5 class="text-primary">
+                                @apartment.Price EGP
+                            </h5>
+                        </div>
+
+                        <div class="card-footer bg-white border-0">
+                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#imagesModal-@apartment.Id">
+                                View Images
+                            </button>
+                        </div>
+                    </div>
+
+                    
+                    <div class="modal fade" id="imagesModal-@apartment.Id" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Apartment Images</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="carousel-@apartment.Id" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            @if (apartment.Photos != null && apartment.Photos.Any())
+                                            {
+                                                var first = true;
+                                                foreach (var photo in apartment.Photos)
+                                                {
+                                                    <div class="carousel-item @(first ? "active" : "")">
+                                                        <img src="@(photo.PhotoUrl)" class="d-block w-100" alt="Apartment Image">
+                                                    </div>
+                                                    first = false;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <div class="alert alert-info">No images available.</div>
+                                            }
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-@apartment.Id" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon"></span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carousel-@apartment.Id" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info text-center">
+            No apartments found.
+        </div>
+    }
 </div>
+
 

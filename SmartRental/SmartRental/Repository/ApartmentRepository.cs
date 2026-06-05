@@ -55,6 +55,7 @@ namespace SmartRental.Repository
         {
             return context.Apartments
         .Where(a => a.OwnerId == ownerId)
+        .Include(a => a.Photos)
         .ToList();
         }
         public Owner GetOwnerByAppUserId(string appUserId)

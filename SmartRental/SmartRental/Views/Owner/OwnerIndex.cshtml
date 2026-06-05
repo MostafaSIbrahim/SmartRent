@@ -2,7 +2,19 @@
 @model IEnumerable<Apartment>
 
 <h2>My Apartments</h2>
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
 
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
 <table class="table">
     <thead>
         <tr>
@@ -11,6 +23,7 @@
             <th>Street Name</th>
             <th>City</th>
             <th>Availability Status</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -22,6 +35,11 @@
                 <td>@apartment.StreetName</td>
                 <td>@apartment.City</td>
                 <td>@apartment.AvailabilityStatus</td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@apartment.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@apartment.Id" class="btn btn-sm btn-danger"
+                       onclick="return confirm('Are you sure you want to delete this record?');">Delete</a>
+                </td>
             </tr>
         }
     </tbody>

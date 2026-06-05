@@ -2,9 +2,13 @@ wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\Images\11d13ed8-58e6-4b6f-ae94-535fb47c4a02.jpg
 wwwroot\Images\2c9977c0-5137-421f-a834-15fe6055de3a.webp
+wwwroot\Images\2e81ae3a-2fd0-44b9-8c55-5e456f351c5f.jpg
+wwwroot\Images\3c7fb6f7-0c12-4202-b0e0-0c302430d92e.jpg
 wwwroot\Images\54dd612f-b929-40ca-8272-871725c9d9f5.jpg
 wwwroot\Images\6f1e8207-7042-4e43-a89e-2b561ffa8321.webp
 wwwroot\Images\9c509aae-ec0d-4446-8fa5-c3d8cd819588.jpg
+wwwroot\Images\f6846481-f010-409c-be8d-458662d757c8.jpg
+wwwroot\Images\fe1c9784-02e8-467e-b579-ccede1b8a2b8.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map

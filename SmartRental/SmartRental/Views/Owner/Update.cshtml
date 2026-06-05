@@ -1,5 +1,4 @@
-﻿```cshtml
-@model SmartRental.ViewModel.ApartmentVM
+﻿@model SmartRental.ViewModel.ApartmentVM
 @using SmartRental.Models.Entites
 
 @{
@@ -90,10 +89,7 @@
                 <input asp-for="FloorNumber" class="form-control" />
             </div>
 
-            <div class="form-group">
-                <label asp-for="OwnerId"></label>
-                <input asp-for="OwnerId" class="form-control" />
-            </div>
+            
 
             @if (Model.CurrentPhotos != null && Model.CurrentPhotos.Any())
             {
