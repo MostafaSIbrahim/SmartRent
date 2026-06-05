@@ -9,61 +9,50 @@
     <link rel="stylesheet" href="~/SmartRental.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SmartRental</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <!-- Left side menu -->
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                         @if (User?.Identity != null && User.Identity.IsAuthenticated && User.IsInRole("Owner"))
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Owner" asp-action="Index">Owner Properties</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Owner" asp-action="OwnerIndex">Appartment Actions</a>
-                            </li>
-                        }
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+    <nav class="sr-navbar">
+        <div class="sr-container">
 
-                    <!-- Right side menu -->
-                    <ul class="navbar-nav">
-                        @if (User?.Identity != null && User.Identity.IsAuthenticated)
-                        {
-                            <li class="nav-item">
-                                <span class="nav-link text-dark">Hello @User.Identity.Name</span>
-                            </li>
-                            <li class="nav-item">
-                                <form asp-controller="Account" asp-action="Logout" method="post" class="form-inline">
-                                    <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-                                </form>
-                            </li>
-                        }
-                        else
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
-                            </li>
-                        }
-                    </ul>
-                </div>
+            <a class="sr-brand" asp-controller="Home" asp-action="Index">
+                SmartRental
+            </a>
+
+            <div class="sr-links">
+                <a class="sr-link" asp-controller="Home" asp-action="Index">Home</a>
+                @* <a class="sr-link" asp-controller="Owner" asp-action="OwnerIndex">Owner</a> *@
+                @if (User?.Identity != null && User.Identity.IsAuthenticated && User.IsInRole("Owner"))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Owner" asp-action="Index">Owner Properties</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Owner" asp-action="OwnerIndex">Appartment Actions</a>
+                    </li>
+                }
+                <a class="sr-link" asp-controller="Owner" asp-action="OwnerIndex">Properties</a>
+                <a class="sr-link" asp-controller="Home" asp-action="Privacy">Privacy</a>
             </div>
-        </nav>
-    </header>
+
+            <div class="sr-links">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <span class="sr-link">@User.Identity.Name</span>
+
+                    <form asp-controller="Account" asp-action="Logout" method="post">
+                        <button class="sr-btn">Logout</button>
+                    </form>
+                }
+                else
+                {
+                    <a class="sr-link" asp-controller="Account" asp-action="Login">Login</a>
+
+                    <a class="sr-btn-primary" asp-controller="Account" asp-action="Register">
+                        Sign Up
+                    </a>
+                }
+            </div>
+
+        </div>
+    </nav>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -81,6 +70,7 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
 
 
 
