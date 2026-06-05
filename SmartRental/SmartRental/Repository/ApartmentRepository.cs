@@ -63,6 +63,12 @@ namespace SmartRental.Repository
             return context.Owners.FirstOrDefault(o => o.AppUserId == appUserId);
         }
 
-        
+        public async Task<List<Apartment>> GetAllWithPhotosAsync()
+        {
+            return await context.Apartments
+                .Include(a => a.Photos)
+                .ToListAsync();
+        }
+
     }
 }

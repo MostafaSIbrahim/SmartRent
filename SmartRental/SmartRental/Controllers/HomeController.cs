@@ -10,18 +10,24 @@ namespace SmartRental.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IGenericRepository<Apartment> ApartmentRepo;
+        private readonly IApartmentRepository apartmentRepo;
 
-        public HomeController(ILogger<HomeController> logger , IGenericRepository<Apartment> _ApartmentRepo)
+        public HomeController(ILogger<HomeController> logger , IApartmentRepository _apartmentRepo)
         {
             _logger = logger;
-            ApartmentRepo = _ApartmentRepo;
+            apartmentRepo = _apartmentRepo;
         }
 
         public async Task<IActionResult> Index()
         {
-            var Apartment = await ApartmentRepo.GetAllAsync();
-            return View(Apartment);
+            var apartments =
+              await apartmentRepo.GetAllWithPhotosAsync();
+
+            ViewBag.IsLoggedIn =
+                User.Identity != null &&
+                User.Identity.IsAuthenticated;
+
+            return View(apartments);
         }
 
         public IActionResult Privacy()

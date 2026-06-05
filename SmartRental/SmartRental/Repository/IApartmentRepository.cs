@@ -11,5 +11,7 @@ namespace SmartRental.Repository
         Task<Apartment?> GetByIdAsync(int id);
         IEnumerable<Apartment> GetByOwnerId(int ownerId);
         Owner GetOwnerByAppUserId(string appUserId);
+        Task<List<Apartment>> GetAllWithPhotosAsync();
+
     }
 }

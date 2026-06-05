@@ -1,71 +1,216 @@
-﻿@* @model IEnumerable<SmartRental.Models.Entites.Apartment>
+﻿@model IEnumerable<SmartRental.Models.Entites.Apartment>
+
 @{
     ViewData["Title"] = "Home Page";
+    bool isLoggedIn = ViewBag.IsLoggedIn ?? false;
 }
 
-<div class="container mt-4">
-    <h1 class="mb-4 text-center">Available Apartments</h1>
+<div class="page-wrapper">
 
-    @if (Model != null && Model.Any())
-    {
-        <div class="row g-4">
-            @foreach (var apartment in Model)
+   
+        <section class="hero">
+            <img src="~/images/hero.jpg" class="hero-img" />
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <h1>Find Your Perfect Student Home</h1>
+                <p>Safe, Affordable Housing Near Your University</p>
+            @if (!isLoggedIn)
             {
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                @apartment.City - @apartment.StreetName
-                            </h5>
-
-                            <p class="card-text text-muted">
-                                @apartment.Description
-                            </p>
-
-                            <ul class="list-group list-group-flush mb-3">
-                                <li class="list-group-item">
-                                    <strong>Rooms:</strong> @apartment.Rooms
-                                </li>
-                                <li class="list-group-item">
-                                    <strong>Bathrooms:</strong> @apartment.Bathrooms
-                                </li>
-                                <li class="list-group-item">
-                                    <strong>Max Tenants:</strong> @apartment.MaxTenants
-                                </li>
-                                <li class="list-group-item">
-                                    <strong>Floor:</strong> @apartment.FloorNumber
-                                </li>
-                                <li class="list-group-item">
-                                    <strong>Apartment No:</strong> @apartment.ApartmentNumber
-                                </li>
-                                <li class="list-group-item">
-                                    <strong>Gender:</strong> @apartment.Gender
-                                </li>
-                                <li class="list-group-item">
-                                    <strong>Status:</strong> @apartment.AvailabilityStatus
-                                </li>
-                            </ul>
-
-                            <h5 class="text-primary">
-                                @apartment.Price EGP
-                            </h5>
-                        </div>
-
-                        <div class="card-footer bg-white border-0">
-                            <a href="#" class="btn btn-primary w-100">
-                                View Details
-                            </a>
-                        </div>
-                    </div>
+                <div class="hero-actions">
+                    <a href="/Account/Login" class="btn-primary-custom">Login</a>
+                    <a href="/Account/Register" class="btn-outline-custom">Sign Up</a>
                 </div>
             }
+            </div>
+        </section>
+   
+
+    <section class="apartments-section">
+        <h2 class="section-title">Available Apartments</h2>
+
+        <div class="cards-grid">
+
+           @*  @foreach (var item in Model)
+            {
+                <div class="card">
+                    <h3>@item.City - @item.StreetName</h3>
+                    <p>@item.Description</p>
+
+                    <div class="info">
+                        <span>Rooms: @item.Rooms</span>
+                        <span>Baths: @item.Bathrooms</span>
+                        <span>Max: @item.MaxTenants</span>
+                    </div>
+
+                    <div class="price">@item.Price EGP</div>
+
+                    <a href="#" class="btn-card">View Details</a>
+                </div>
+            } *@
+            @* @foreach (var item in Model)
+            {
+                <div class="card">
+
+                    @if (item.Photos != null && item.Photos.Any())
+                    {
+                        <img src="@item.Photos.First().PhotoUrl"
+                             class="card-img" />
+                    }
+
+                    <h3>@item.City - @item.StreetName</h3>
+
+                    <p>@item.Description</p>
+
+                    <div class="info">
+                        <span>Rooms: @item.Rooms</span>
+                        <span>Baths: @item.Bathrooms</span>
+                        <span>Max: @item.MaxTenants</span>
+                    </div>
+
+                    <div class="price">@item.Price EGP</div>
+
+                    <a href="#" class="btn-card">
+                        View Details
+                    </a>
+
+                </div>
+            } *@
+            @foreach (var item in Model)
+            {
+                var modalId = $"apartmentModal{item.Id}";
+
+                <div class="card">
+
+                    @{
+                        var imageUrl = item.Photos != null && item.Photos.Any()
+                        ? item.Photos.First().PhotoUrl
+                        : "/images/no-image.jpg";
+                    }
+
+                    <img src="@imageUrl" class="card-img" />
+
+                    <h3>@item.City - @item.StreetName</h3>
+
+                    <p>@item.Description</p>
+
+                    <div class="info">
+                        <span>Rooms: @item.Rooms</span>
+                        <span>Baths: @item.Bathrooms</span>
+                        <span>Max: @item.MaxTenants</span>
+                    </div>
+
+                    <div class="price">
+                        @item.Price EGP
+                    </div>
+
+                    <button class="btn-card"
+                            data-bs-toggle="modal"
+                            data-bs-target="#@modalId">
+                        View Details
+                    </button>
+
+                </div>
+
+
+
+                <!-- Modal -->
+
+                <div class="modal fade"
+                     id="@modalId"
+                     tabindex="-1">
+
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+
+                                <h5 class="modal-title">
+                                    Apartment Details
+                                </h5>
+
+                                <button type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal">
+                                </button>
+
+                            </div>
+
+                            <div class="modal-body">
+
+                                <img src="@imageUrl"
+                                     class="modal-apartment-img" />
+
+                                <h4 class="mt-3">
+                                    @item.City - @item.StreetName
+                                </h4>
+
+                                <p>
+                                    @item.Description
+                                </p>
+
+                                <hr />
+
+                                <div class="details-grid">
+
+                                    <div><strong>Rooms:</strong> @item.Rooms</div>
+
+                                    <div><strong>Bathrooms:</strong> @item.Bathrooms</div>
+
+                                    <div><strong>Max Tenants:</strong> @item.MaxTenants</div>
+
+                                    <div><strong>Floor:</strong> @item.FloorNumber</div>
+
+                                    <div><strong>Apartment No:</strong> @item.ApartmentNumber</div>
+
+                                    <div><strong>Gender:</strong> @item.Gender</div>
+
+                                    <div><strong>Status:</strong> @item.AvailabilityStatus</div>
+
+                                    <div><strong>Price:</strong> @item.Price EGP</div>
+
+                                    <div>
+                                        <strong>Address:</strong>
+                                        @item.City,
+                                        @item.StreetName,
+                                        Building @item.BuildingNumber
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="modal-footer">
+
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <a href="#"
+                                       class="btn-rent">
+                                        Rental Request
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a asp-controller="Account"
+                                       asp-action="Login"
+                                       class="btn-rent">
+                                        Login To Rent
+                                    </a>
+                                }
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+
+
         </div>
-    }
-    else
-    {
-        <div class="alert alert-info text-center">
-            No apartments found.
-        </div>
-    }
+    </section>
+
 </div>
- *@
