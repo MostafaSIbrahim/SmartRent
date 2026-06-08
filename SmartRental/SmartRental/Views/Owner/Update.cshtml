@@ -5,129 +5,160 @@
     ViewData["Title"] = "Update Apartment";
 }
 
-<h1>Update Apartment</h1>
+<div class="add-page">
 
-<hr />
+    <div class="add-card">
 
-<div class="row">
-    <div class="col-md-6">
+        <h2>Update Apartment</h2>
 
-        <form asp-action="Update" method="post" enctype="multipart/form-data">
+        <p class="add-subtitle">
+            Edit apartment information
+        </p>
+
+        <form asp-action="Update"
+              method="post"
+              enctype="multipart/form-data">
 
             <input asp-for="Id" type="hidden" />
 
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-            <div class="form-group">
-                <label asp-for="Rooms"></label>
-                <input asp-for="Rooms" class="form-control" />
-                <span asp-validation-for="Rooms" class="text-danger"></span>
+            <div asp-validation-summary="ModelOnly"
+                 class="text-danger">
             </div>
 
-            <div class="form-group">
-                <label asp-for="Bathrooms"></label>
-                <input asp-for="Bathrooms" class="form-control" />
-                <span asp-validation-for="Bathrooms" class="text-danger"></span>
+            <div class="form-grid">
+
+                <div>
+                    <label asp-for="Rooms"></label>
+                    <input asp-for="Rooms" class="form-control" />
+                    <span asp-validation-for="Rooms" class="text-danger"></span>
+                </div>
+
+                <div>
+                    <label asp-for="Bathrooms"></label>
+                    <input asp-for="Bathrooms" class="form-control" />
+                    <span asp-validation-for="Bathrooms" class="text-danger"></span>
+                </div>
+
+                <div>
+                    <label asp-for="MaxTenants"></label>
+                    <input asp-for="MaxTenants" class="form-control" />
+                    <span asp-validation-for="MaxTenants" class="text-danger"></span>
+                </div>
+
+                <div>
+                    <label asp-for="Price"></label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+
+                <div>
+                    <label asp-for="FloorNumber"></label>
+                    <input asp-for="FloorNumber" class="form-control" />
+                </div>
+
+                <div>
+                    <label asp-for="ApartmentNumber"></label>
+                    <input asp-for="ApartmentNumber" class="form-control" />
+                </div>
+
+                <div>
+                    <label asp-for="BuildingNumber"></label>
+                    <input asp-for="BuildingNumber" class="form-control" />
+                </div>
+
+                <div>
+                    <label asp-for="City"></label>
+                    <input asp-for="City" class="form-control" />
+                </div>
+
+                <div>
+                    <label asp-for="StreetName"></label>
+                    <input asp-for="StreetName" class="form-control" />
+                </div>
+
+                <div>
+                    <label asp-for="Gender"></label>
+
+                    <select asp-for="Gender"
+                            asp-items="Html.GetEnumSelectList<Gender>()"
+                            class="form-control">
+                    </select>
+                </div>
+
+                <div>
+                    <label asp-for="AvailabilityStatus"></label>
+
+                    <select asp-for="AvailabilityStatus"
+                            asp-items="Html.GetEnumSelectList<Status>()"
+                            class="form-control">
+                    </select>
+                </div>
+
             </div>
 
-            <div class="form-group">
-                <label asp-for="MaxTenants"></label>
-                <input asp-for="MaxTenants" class="form-control" />
-                <span asp-validation-for="MaxTenants" class="text-danger"></span>
-            </div>
+            <div class="full-width">
 
-            <div class="form-group">
                 <label asp-for="Description"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
 
-            <div class="form-group">
-                <label asp-for="Price"></label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
+                <textarea asp-for="Description"
+                          rows="4"
+                          class="form-control">
+                </textarea>
 
-            <div class="form-group">
-                <label asp-for="Gender"></label>
-                <select asp-for="Gender"
-                        asp-items="Html.GetEnumSelectList<Gender>()"
-                        class="form-control">
-                </select>
             </div>
-
-            <div class="form-group">
-                <label asp-for="AvailabilityStatus"></label>
-                <select asp-for="AvailabilityStatus"
-                        asp-items="Html.GetEnumSelectList<Status>()"
-                        class="form-control">
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="City"></label>
-                <input asp-for="City" class="form-control" />
-            </div>
-
-            <div class="form-group">
-                <label asp-for="StreetName"></label>
-                <input asp-for="StreetName" class="form-control" />
-            </div>
-
-            <div class="form-group">
-                <label asp-for="BuildingNumber"></label>
-                <input asp-for="BuildingNumber" class="form-control" />
-            </div>
-
-            <div class="form-group">
-                <label asp-for="ApartmentNumber"></label>
-                <input asp-for="ApartmentNumber" class="form-control" />
-            </div>
-
-            <div class="form-group">
-                <label asp-for="FloorNumber"></label>
-                <input asp-for="FloorNumber" class="form-control" />
-            </div>
-
-            
 
             @if (Model.CurrentPhotos != null && Model.CurrentPhotos.Any())
             {
-                <hr />
-                <h4>Current Images</h4>
+                <div class="full-width">
 
-                <div style="display:flex;flex-wrap:wrap;gap:10px">
+                    <h4 class="images-title">
+                        Current Images
+                    </h4>
 
-                    @foreach (var photo in Model.CurrentPhotos)
-                    {
-                        <img src="@photo.Url"
-                             width="200"
-                             height="150"
-                             style="border:1px solid #ccc" />
-                    }
+                    <div class="current-images">
+
+                        @foreach (var photo in Model.CurrentPhotos)
+                        {
+                            <img src="@photo.Url"
+                                 class="current-img" />
+                        }
+
+                    </div>
 
                 </div>
             }
 
-            <hr />
+            <div class="full-width">
 
-            <div class="form-group">
-                <label asp-for="image">Add New Images</label>
+                <label asp-for="image">
+                    Add New Images
+                </label>
+
                 <input asp-for="image"
                        type="file"
                        class="form-control"
                        multiple />
+
             </div>
 
-            <br />
+            <div class="form-actions">
 
-            <input type="submit"
-                   value="Update Apartment"
-                   class="btn btn-warning" />
+                <button type="submit"
+                        class="save-btn">
+                    Update Apartment
+                </button>
+
+                <a asp-action="OwnerIndex"
+                   class="cancel-btn">
+                    Cancel
+                </a>
+
+            </div>
 
         </form>
 
     </div>
+
 </div>
 
 @section Scripts
@@ -136,4 +167,3 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
-

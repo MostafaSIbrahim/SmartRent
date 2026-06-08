@@ -1,0 +1,146 @@
+﻿@model SmartRental.Models.Entites.Apartment
+
+@{
+    ViewData["Title"] = "Apartment Details";
+}
+
+<div class="details-page">
+
+    <div class="details-card">
+
+        @if (Model.Photos != null && Model.Photos.Any())
+        {
+            <div id="carouselExample"
+                 class="carousel slide">
+
+                <div class="carousel-inner">
+
+                    @{
+                        int i = 0;
+                    }
+
+                    @foreach (var photo in Model.Photos)
+                    {
+                        <div class="carousel-item @(i == 0 ? "active" : "")">
+
+                            <img src="@photo.PhotoUrl"
+                                 class="details-image">
+
+                        </div>
+
+                        i++;
+                    }
+
+                </div>
+
+                <button class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+
+                    <span class="carousel-control-prev-icon"></span>
+
+                </button>
+
+                <button class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+
+                    <span class="carousel-control-next-icon"></span>
+
+                </button>
+
+            </div>
+        }
+
+        <div class="details-content">
+
+            <h2>
+                @Model.City - @Model.StreetName
+            </h2>
+
+            <p>
+                @Model.Description
+            </p>
+
+            <div class="details-grid">
+
+                <div><strong>Rooms:</strong> @Model.Rooms</div>
+
+                <div><strong>Bathrooms:</strong> @Model.Bathrooms</div>
+
+                <div><strong>Max Tenants:</strong> @Model.MaxTenants</div>
+
+                <div><strong>Floor Number:</strong> @Model.FloorNumber</div>
+
+                <div><strong>Apartment Number:</strong> @Model.ApartmentNumber</div>
+
+                <div><strong>Gender:</strong> @Model.Gender</div>
+
+                <div><strong>Status:</strong> @Model.AvailabilityStatus</div>
+
+                <div><strong>Price:</strong> @Model.Price EGP</div>
+
+                <div>
+                    <strong>Address:</strong>
+                    @Model.City,
+                    @Model.StreetName,
+                    Building @Model.BuildingNumber
+                </div>
+
+            </div>
+
+        @*     <div class="details-actions">
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a href="#" class="btn-rent">
+                        Rental Request
+                    </a>
+                }
+                else
+                {
+                    <a asp-controller="Account"
+                       asp-action="Login"
+                       class="btn-rent">
+
+                        Login To Rent
+
+                    </a>
+                }
+ *@
+
+                <div class="details-actions">
+
+    @if (User.IsInRole("Tenant"))
+    {
+        <a href="#" class="btn-rent">
+            Rental Request
+        </a>
+    }
+    else if (!User.Identity.IsAuthenticated)
+    {
+        <a asp-controller="Account"
+           asp-action="Login"
+           class="btn-rent">
+            Login To Rent
+        </a>
+    }
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="comments-section">
+
+        <h3>Comments</h3>
+
+        <p>No comments yet.</p>
+
+    </div>
+
+</div>

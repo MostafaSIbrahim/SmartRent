@@ -1,22 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ahmed\\OneDrive\\Desktop\\New folder (3)\\SmartRent\\SmartRental\\",
+  "WorkspaceRootPath": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\ahmed\\onedrive\\desktop\\new folder (3)\\smartrent\\smartrental\\smartrental\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\compumarts\\documents\\depii2\\backend2\\smartrent\\smartrental\\smartrental\\views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|solutionrelative:smartrental\\views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\compumarts\\documents\\depii2\\backend2\\smartrent\\smartrental\\smartrental\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|solutionrelative:smartrental\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\ahmed\\onedrive\\desktop\\new folder (3)\\smartrent\\smartrental\\smartrental\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|solutionrelative:smartrental\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\compumarts\\documents\\depii2\\backend2\\smartrent\\smartrental\\smartrental\\views\\owner\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|solutionrelative:smartrental\\views\\owner\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\ahmed\\onedrive\\desktop\\new folder (3)\\smartrent\\smartrental\\smartrental\\controllers\\ownercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\compumarts\\documents\\depii2\\backend2\\smartrent\\smartrental\\smartrental\\views\\owner\\ownerindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|solutionrelative:smartrental\\views\\owner\\ownerindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\compumarts\\documents\\depii2\\backend2\\smartrent\\smartrental\\smartrental\\views\\owner\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|solutionrelative:smartrental\\views\\owner\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\compumarts\\documents\\depii2\\backend2\\smartrent\\smartrental\\smartrental\\views\\owner\\addapartment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|solutionrelative:smartrental\\views\\owner\\addapartment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\compumarts\\documents\\depii2\\backend2\\smartrent\\smartrental\\smartrental\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|solutionrelative:smartrental\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\compumarts\\documents\\depii2\\backend2\\smartrent\\smartrental\\smartrental\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|solutionrelative:smartrental\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\compumarts\\documents\\depii2\\backend2\\smartrent\\smartrental\\smartrental\\controllers\\ownercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|solutionrelative:smartrental\\controllers\\ownercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\ahmed\\onedrive\\desktop\\new folder (3)\\smartrent\\smartrental\\smartrental\\views\\owner\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|solutionrelative:smartrental\\views\\owner\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\compumarts\\documents\\depii2\\backend2\\smartrent\\smartrental\\smartrental\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|solutionrelative:smartrental\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|c:\\users\\compumarts\\documents\\depii2\\backend2\\smartrent\\smartrental\\smartrental\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B5AB51D8-796B-4503-80C4-66D182FEB947}|SmartRental\\SmartRental.csproj|solutionrelative:smartrental\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,12 +54,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -46,54 +70,136 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\ahmed\\OneDrive\\Desktop\\New folder (3)\\SmartRent\\SmartRental\\SmartRental\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "SmartRental\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\ahmed\\OneDrive\\Desktop\\New folder (3)\\SmartRent\\SmartRental\\SmartRental\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "SmartRental\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAqwB0AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-05T21:20:44.426Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Layout.cshtml.css",
-              "DocumentMoniker": "C:\\Users\\ahmed\\OneDrive\\Desktop\\New folder (3)\\SmartRent\\SmartRental\\SmartRental\\Views\\Shared\\_Layout.cshtml.css",
-              "RelativeDocumentMoniker": "SmartRental\\Views\\Shared\\_Layout.cshtml.css",
-              "ToolTip": "C:\\Users\\ahmed\\OneDrive\\Desktop\\New folder (3)\\SmartRent\\SmartRental\\SmartRental\\Views\\Shared\\_Layout.cshtml.css",
-              "RelativeToolTip": "SmartRental\\Views\\Shared\\_Layout.cshtml.css",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAC8AAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-06-05T21:20:30.493Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "OwnerIndex.cshtml",
+              "DocumentMoniker": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Views\\Owner\\OwnerIndex.cshtml",
+              "RelativeDocumentMoniker": "SmartRental\\Views\\Owner\\OwnerIndex.cshtml",
+              "ToolTip": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Views\\Owner\\OwnerIndex.cshtml",
+              "RelativeToolTip": "SmartRental\\Views\\Owner\\OwnerIndex.cshtml",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAAwJAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-07T20:19:03.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "index.cshtml",
-              "DocumentMoniker": "C:\\Users\\ahmed\\OneDrive\\Desktop\\New folder (3)\\SmartRent\\SmartRental\\SmartRental\\Views\\Owner\\index.cshtml",
+              "DocumentMoniker": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Views\\Owner\\index.cshtml",
               "RelativeDocumentMoniker": "SmartRental\\Views\\Owner\\index.cshtml",
-              "ToolTip": "C:\\Users\\ahmed\\OneDrive\\Desktop\\New folder (3)\\SmartRent\\SmartRental\\SmartRental\\Views\\Owner\\index.cshtml",
+              "ToolTip": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Views\\Owner\\index.cshtml",
               "RelativeToolTip": "SmartRental\\Views\\Owner\\index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAeAAAAAAAAAA==",
+              "ViewState": "AQIAACMAAAAAAAAAAADwvy4AAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-06-02T19:24:08.888Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OwnerController.cs",
-              "DocumentMoniker": "C:\\Users\\ahmed\\OneDrive\\Desktop\\New folder (3)\\SmartRent\\SmartRental\\SmartRental\\Controllers\\OwnerController.cs",
-              "RelativeDocumentMoniker": "SmartRental\\Controllers\\OwnerController.cs",
-              "ToolTip": "C:\\Users\\ahmed\\OneDrive\\Desktop\\New folder (3)\\SmartRent\\SmartRental\\SmartRental\\Controllers\\OwnerController.cs",
-              "RelativeToolTip": "SmartRental\\Controllers\\OwnerController.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAowLoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T19:21:29.268Z",
+              "DocumentIndex": 0,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Views\\Home\\Details.cshtml",
+              "RelativeDocumentMoniker": "SmartRental\\Views\\Home\\Details.cshtml",
+              "ToolTip": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Views\\Home\\Details.cshtml",
+              "RelativeToolTip": "SmartRental\\Views\\Home\\Details.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAH4AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-07T18:10:27.81Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "SmartRental\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "SmartRental\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAHIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-07T18:07:36.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AddApartment.cshtml",
+              "DocumentMoniker": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Views\\Owner\\AddApartment.cshtml",
+              "RelativeDocumentMoniker": "SmartRental\\Views\\Owner\\AddApartment.cshtml",
+              "ToolTip": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Views\\Owner\\AddApartment.cshtml",
+              "RelativeToolTip": "SmartRental\\Views\\Owner\\AddApartment.cshtml",
+              "ViewState": "AQIAAIkAAAAAAAAAAADwv6sAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-08T15:33:43.599Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Update.cshtml",
+              "DocumentMoniker": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Views\\Owner\\Update.cshtml",
+              "RelativeDocumentMoniker": "SmartRental\\Views\\Owner\\Update.cshtml",
+              "ToolTip": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Views\\Owner\\Update.cshtml",
+              "RelativeToolTip": "SmartRental\\Views\\Owner\\Update.cshtml",
+              "ViewState": "AQIAAIYAAAAAAAAAAADwv6gAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-08T16:01:10.752Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "SmartRental\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "SmartRental\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABsAAABzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-05T21:20:44.426Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OwnerController.cs",
+              "DocumentMoniker": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Controllers\\OwnerController.cs",
+              "RelativeDocumentMoniker": "SmartRental\\Controllers\\OwnerController.cs",
+              "ToolTip": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Controllers\\OwnerController.cs",
+              "RelativeToolTip": "SmartRental\\Controllers\\OwnerController.cs",
+              "ViewState": "AQIAAPMAAAAAAAAAAAAwwBUBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T19:21:29.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "SmartRental\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "SmartRental\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAAHwBAAAAAAAAAAAAAIUBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-06-07T18:11:28.033Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "SmartRental\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "SmartRental\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAqwDUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-07T17:56:54.653Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "_Layout.cshtml.css",
+              "DocumentMoniker": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Views\\Shared\\_Layout.cshtml.css",
+              "RelativeDocumentMoniker": "SmartRental\\Views\\Shared\\_Layout.cshtml.css",
+              "ToolTip": "C:\\Users\\COMPUMARTS\\Documents\\DEPII2\\BackEnd2\\SmartRent\\SmartRental\\SmartRental\\Views\\Shared\\_Layout.cshtml.css",
+              "RelativeToolTip": "SmartRental\\Views\\Shared\\_Layout.cshtml.css",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAC8AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-06-05T21:20:30.493Z"
             }
           ]
         }

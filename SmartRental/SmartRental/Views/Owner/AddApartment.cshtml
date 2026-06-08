@@ -1,107 +1,172 @@
-﻿    @model SmartRental.ViewModel.ApartmentVM
-    @using SmartRental.Models.Entites
-    @{
-        ViewData["Title"] = "AddApartment";
-   
-    }
+﻿@model SmartRental.ViewModel.ApartmentVM
+@using SmartRental.Models.Entites
 
-    <h1>Add Apartment</h1>
+@{
+    ViewData["Title"] = "Add Apartment";
+}
 
-    <h4>Apartment</h4>
-    <hr />
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-action="SaveAdd" method="post" enctype="multipart/form-data">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Rooms" class="control-label"></label>
+<div class="add-page">
+
+    <div class="add-card">
+
+        <h2>Add Apartment</h2>
+
+        <p class="add-subtitle">
+            Enter apartment information below
+        </p>
+
+        <form asp-action="SaveAdd"
+              method="post"
+              enctype="multipart/form-data">
+
+            <div asp-validation-summary="ModelOnly"
+                 class="text-danger">
+            </div>
+
+            <div class="form-grid">
+
+                <div>
+                    <label asp-for="Rooms"></label>
                     <input asp-for="Rooms" class="form-control" />
                     <span asp-validation-for="Rooms" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="Bathrooms" class="control-label"></label>
+
+                <div>
+                    <label asp-for="Bathrooms"></label>
                     <input asp-for="Bathrooms" class="form-control" />
                     <span asp-validation-for="Bathrooms" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="MaxTenants" class="control-label"></label>
+
+                <div>
+                    <label asp-for="MaxTenants"></label>
                     <input asp-for="MaxTenants" class="form-control" />
                     <span asp-validation-for="MaxTenants" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="Description" class="control-label"></label>
-                    <input asp-for="Description" class="form-control" />
-                    <span asp-validation-for="Description" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Price" class="control-label"></label>
+
+                <div>
+                    <label asp-for="Price"></label>
                     <input asp-for="Price" class="form-control" />
                     <span asp-validation-for="Price" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="Gender" class="control-label"></label>
-                    <select asp-for="Gender" 
-                    asp-items="Html.GetEnumSelectList<Gender>()"
-                     class="form-control">
-                    </select>
-                    <span asp-validation-for="Gender" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="AvailabilityStatus" class="control-label"></label>
-                    <select asp-for="AvailabilityStatus"
-                        asp-items="Html.GetEnumSelectList<Status>()"
-                       class="form-control">
-                    </select>
 
-                    <span asp-validation-for="AvailabilityStatus" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="City" class="control-label"></label>
-                    <input asp-for="City" class="form-control" />
-                    <span asp-validation-for="City" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="StreetName" class="control-label"></label>
-                    <input asp-for="StreetName" class="form-control" />
-                    <span asp-validation-for="StreetName" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="BuildingNumber" class="control-label"></label>
-                    <input asp-for="BuildingNumber" class="form-control" />
-                    <span asp-validation-for="BuildingNumber" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ApartmentNumber" class="control-label"></label>
-                    <input asp-for="ApartmentNumber" class="form-control" />
-                    <span asp-validation-for="ApartmentNumber" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="FloorNumber" class="control-label"></label>
+                <div>
+                    <label asp-for="FloorNumber"></label>
                     <input asp-for="FloorNumber" class="form-control" />
                     <span asp-validation-for="FloorNumber" class="text-danger"></span>
                 </div>
 
                 <div>
-                    <label asp-for="image" class="control-label"></label>
-                    <input asp-for="image" type ="file" class="form-control"  multiple/>
+                    <label asp-for="ApartmentNumber"></label>
+                    <input asp-for="ApartmentNumber" class="form-control" />
+                    <span asp-validation-for="ApartmentNumber" class="text-danger"></span>
                 </div>
 
-                @* <div class="form-group">
-                    <label asp-for="OwnerId" class="control-label"></label>
-                    <input asp-for="OwnerId" class="form-control" />
-                    <span asp-validation-for="OwnerId" class="text-danger"></span>
-                </div> *@
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" style="margin:5px;"/>
+                <div>
+                    <label asp-for="BuildingNumber"></label>
+                    <input asp-for="BuildingNumber" class="form-control" />
+                    <span asp-validation-for="BuildingNumber" class="text-danger"></span>
                 </div>
-            </form>
-        </div>
+
+                <div>
+                    <label asp-for="City"></label>
+                    <input asp-for="City" class="form-control" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+
+                <div>
+                    <label asp-for="StreetName"></label>
+                    <input asp-for="StreetName" class="form-control" />
+                    <span asp-validation-for="StreetName" class="text-danger"></span>
+                </div>
+
+                <div>
+                    <label asp-for="Gender"></label>
+
+                    <select asp-for="Gender"
+                            asp-items="Html.GetEnumSelectList<Gender>()"
+                            class="form-control">
+                    </select>
+
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+
+                <div>
+                    <label asp-for="AvailabilityStatus"></label>
+
+                    <select asp-for="AvailabilityStatus"
+                            asp-items="Html.GetEnumSelectList<Status>()"
+                            class="form-control">
+                    </select>
+
+                    <span asp-validation-for="AvailabilityStatus" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <div class="full-width">
+
+                <label asp-for="Description"></label>
+
+                <textarea asp-for="Description"
+                          class="form-control"
+                          rows="4"></textarea>
+
+                <span asp-validation-for="Description"
+                      class="text-danger"></span>
+
+            </div>
+
+            <div class="full-width">
+
+                <label asp-for="image">
+                    Apartment Images
+                </label>
+
+                <input asp-for="image"
+                       type="file"
+                       class="form-control"
+                       multiple
+                       id="imagesInput" />
+
+                <small id="imagesCount"></small>
+
+            </div>
+
+            <div class="form-actions">
+
+                <button type="submit"
+                        class="save-btn">
+                    Create Apartment
+                </button>
+
+                <a asp-action="OwnerIndex"
+                   class="cancel-btn">
+                    Cancel
+                </a>
+
+            </div>
+
+        </form>
+
     </div>
 
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
+</div>
 
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+}
+
+
+
+<script>
+    document
+        .getElementById("imagesInput")
+        .addEventListener("change", function () {
+
+            document.getElementById("imagesCount").innerText =
+                this.files.length + " image(s) selected";
+
+        });
+</script>

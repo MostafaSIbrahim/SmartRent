@@ -105,108 +105,19 @@
                         @item.Price EGP
                     </div>
 
-                    <button class="btn-card"
-                            data-bs-toggle="modal"
-                            data-bs-target="#@modalId">
+                    
+                    <a asp-controller="Home"
+                       asp-action="Details"
+                       asp-route-id="@item.Id"
+                       class="btn-card">
                         View Details
-                    </button>
+                    </a>
 
                 </div>
 
 
 
-                <!-- Modal -->
-
-                <div class="modal fade"
-                     id="@modalId"
-                     tabindex="-1">
-
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-
-                        <div class="modal-content">
-
-                            <div class="modal-header">
-
-                                <h5 class="modal-title">
-                                    Apartment Details
-                                </h5>
-
-                                <button type="button"
-                                        class="btn-close"
-                                        data-bs-dismiss="modal">
-                                </button>
-
-                            </div>
-
-                            <div class="modal-body">
-
-                                <img src="@imageUrl"
-                                     class="modal-apartment-img" />
-
-                                <h4 class="mt-3">
-                                    @item.City - @item.StreetName
-                                </h4>
-
-                                <p>
-                                    @item.Description
-                                </p>
-
-                                <hr />
-
-                                <div class="details-grid">
-
-                                    <div><strong>Rooms:</strong> @item.Rooms</div>
-
-                                    <div><strong>Bathrooms:</strong> @item.Bathrooms</div>
-
-                                    <div><strong>Max Tenants:</strong> @item.MaxTenants</div>
-
-                                    <div><strong>Floor:</strong> @item.FloorNumber</div>
-
-                                    <div><strong>Apartment No:</strong> @item.ApartmentNumber</div>
-
-                                    <div><strong>Gender:</strong> @item.Gender</div>
-
-                                    <div><strong>Status:</strong> @item.AvailabilityStatus</div>
-
-                                    <div><strong>Price:</strong> @item.Price EGP</div>
-
-                                    <div>
-                                        <strong>Address:</strong>
-                                        @item.City,
-                                        @item.StreetName,
-                                        Building @item.BuildingNumber
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="modal-footer">
-
-                                @if (User.Identity.IsAuthenticated)
-                                {
-                                    <a href="#"
-                                       class="btn-rent">
-                                        Rental Request
-                                    </a>
-                                }
-                                else
-                                {
-                                    <a asp-controller="Account"
-                                       asp-action="Login"
-                                       class="btn-rent">
-                                        Login To Rent
-                                    </a>
-                                }
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
+                
             }
 
 

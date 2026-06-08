@@ -29,6 +29,15 @@ namespace SmartRental.Controllers
 
             return View(apartments);
         }
+        public async Task<IActionResult> Details(int id)
+        {
+            var apartment = await apartmentRepo.GetByIdAsync(id);
+
+            if (apartment == null)
+                return NotFound();
+
+            return View(apartment);
+        }
 
         public IActionResult Privacy()
         {
