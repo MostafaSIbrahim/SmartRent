@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using SmartRental.DTO;
 using SmartRental.Models.Entites;
 using SmartRental.Models.Entites.Identity;
-using SmartRental.Reporisitory;
 using SmartRental.Repository;
 //using SmartRental.Services;
 
@@ -13,14 +12,14 @@ namespace SmartRental.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
-        private readonly IGenericRepository<Owner> _ownerRepository;
-        private readonly IGenericRepository<Tenant> _tenantRepository;
+        private readonly IOwnerRepository _ownerRepository;
+        private readonly ITenantRepository _tenantRepository;
 
         public AccountController(
             UserManager<AppUser> userManager,
             SignInManager<AppUser> signInManager,
-            IGenericRepository<Owner> ownerRepository,
-            IGenericRepository<Tenant> tenantRepository)
+            IOwnerRepository ownerRepository,
+            ITenantRepository tenantRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;

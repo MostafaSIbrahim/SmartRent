@@ -16,11 +16,11 @@ namespace SmartRental.Data.Configuration
            builder.HasOne(rc => rc.Apartment)
                     .WithMany(a => a.RentalContracts)
                     .HasForeignKey(rc => rc.ApartmentId)
-                    .OnDelete(DeleteBehavior.Restrict);
+                    .OnDelete(DeleteBehavior.Cascade);
             builder.HasOne(rc => rc.Tenant)
                     .WithMany(t => t.RentalContracts)
                     .HasForeignKey(rc => rc.TenantId)
-                    .OnDelete(DeleteBehavior.Restrict);
+                    .OnDelete(DeleteBehavior.Cascade);
              builder.Property(rc => rc.StartDate).IsRequired();
              builder.Property(rc => rc.EndDate).IsRequired();
              builder.Property(rc => rc.AnnualIncreasePercentage).IsRequired();

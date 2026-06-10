@@ -16,11 +16,11 @@ namespace SmartRental.Data.Configuration
             builder.HasOne(t => t.University)
                     .WithMany(u => u.Tenants)
                     .HasForeignKey(t => t.UniversityId)
-                    .OnDelete(DeleteBehavior.Restrict);
+                    .OnDelete(DeleteBehavior.Cascade);
              builder.HasMany(t => t.RentalContracts)
                     .WithOne(rc => rc.Tenant)
                     .HasForeignKey(rc => rc.TenantId)
-                    .OnDelete(DeleteBehavior.Restrict);
+                    .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

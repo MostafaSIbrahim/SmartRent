@@ -1,0 +1,136 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model SmartRental.DTO.RegisterDTO
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="sr-auth-page">
+
+    <div class="sr-auth-card sr-wide">
+
+        <h2 class="sr-title">Create Account</h2>
+        <p class="sr-subtitle">Join Smart Rental today</p>
+
+        <form asp-action="Register"
+              asp-controller="Admin"
+              method="post"
+              class="sr-form">
+
+            @Html.AntiForgeryToken()
+
+            <div asp-validation-summary="ModelOnly"
+                 class="text-danger">
+            </div>
+
+            <input asp-for="Name"
+                   class="sr-input"
+                   placeholder="Full Name" />
+
+            <span asp-validation-for="Name"
+                  class="text-danger"></span>
+
+
+            <input asp-for="Email"
+                   class="sr-input"
+                   placeholder="Email Address" />
+
+            <span asp-validation-for="Email"
+                  class="text-danger"></span>
+
+
+            <div class="sr-row">
+
+                <input name="PhoneNumber[0]"
+                       class="sr-input"
+                       placeholder="Phone Number" />
+
+                <input name="PhoneNumber[1]"
+                       class="sr-input"
+                       placeholder="Optional Phone" />
+
+            </div>
+
+            <span asp-validation-for="PhoneNumber"
+                  class="text-danger"></span>
+
+
+            <input asp-for="NationalID"
+                   class="sr-input"
+                   placeholder="National ID" />
+
+            <span asp-validation-for="NationalID"
+                  class="text-danger"></span>
+
+
+            <input asp-for="Password"
+                   type="password"
+                   class="sr-input"
+                   placeholder="Password" />
+
+            <span asp-validation-for="Password"
+                  class="text-danger"></span>
+
+
+            <div>
+
+                <h6 style="margin-bottom:10px">
+                    Account Type
+                </h6>
+
+                <div class="role-container">
+
+                    <label class="role-option">
+                        <input asp-for="Role"
+                               type="radio"
+                               value="Tenant" />
+                        Student
+                    </label>
+
+                    <label class="role-option">
+                        <input asp-for="Role"
+                               type="radio"
+                               value="Owner" />
+                        Property Owner
+                    </label>
+                    <label class="role-option">
+                        <input asp-for="Role"
+                               type="radio"
+                               value="Admin" />
+                        Admin
+                    </label>
+                </div>
+
+                <span asp-validation-for="Role"
+                      class="text-danger"></span>
+
+            </div>
+
+            <input type="hidden"
+                   asp-for="Photo"
+                   value="default-user.png" />
+
+            <button type="submit"
+                    class="sr-btn-primary">
+                Create Account
+            </button>
+
+        </form>
+
+        <p class="sr-footer-text">
+            Already have an account?
+            <a asp-controller="Account"
+               asp-action="Login">
+                Login
+            </a>
+        </p>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

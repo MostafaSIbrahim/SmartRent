@@ -16,7 +16,7 @@ namespace SmartRental.Data.Configuration
             builder.HasOne(a => a.Owner)
                    .WithMany(o => o.Apartments)
                    .HasForeignKey(a => a.OwnerId)
-                   .OnDelete(DeleteBehavior.Restrict);
+                   .OnDelete(DeleteBehavior.Cascade);
             builder.HasMany(a => a.Photos)
                    .WithOne(p => p.Apartment)
                    .HasForeignKey(p => p.ApartmentId)
@@ -24,7 +24,7 @@ namespace SmartRental.Data.Configuration
              builder.HasMany(a => a.RentalContracts)
                    .WithOne(rc => rc.Apartment)
                    .HasForeignKey(rc => rc.ApartmentId)
-                   .OnDelete(DeleteBehavior.Restrict);
+                   .OnDelete(DeleteBehavior.Cascade);
                     builder.Property(a => a.City).HasColumnType("varchar(35)").IsRequired();
                     builder.Property(a => a.StreetName).HasColumnType("varchar(35)").IsRequired();
                     builder.Property(a => a.BuildingNumber).IsRequired();

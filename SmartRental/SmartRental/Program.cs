@@ -6,7 +6,6 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using SmartRental.Data;
 using SmartRental.Models.Entites.Identity;
-using SmartRental.Reporisitory;
 using SmartRental.Repository;
 //using SmartRental.Services;
 using System.Text;
@@ -50,8 +49,11 @@ namespace SmartRental
 
 
             #endregion
-           builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-           builder.Services.AddScoped<IApartmentRepository,ApartmentRepository>();
+            builder.Services.AddScoped<IOwnerRepository, OwnerRepository>();
+            builder.Services.AddScoped<ITenantRepository, TenantRepository>();
+            builder.Services.AddScoped<IUniverisityRepository, UniverisityRepository>();
+
+            builder.Services.AddScoped<IApartmentRepository,ApartmentRepository>();
             builder.Services.ConfigureApplicationCookie(options =>
             {
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(1);

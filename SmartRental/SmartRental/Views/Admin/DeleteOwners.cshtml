@@ -1,0 +1,71 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<SmartRental.Models.Entites.Owner>
+
+@{
+    ViewData["Title"] = "DeleteOwners";
+}
+<div class="container mt-4">
+    <h1 class="mb-4 text-center">Available Apartments</h1>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="row g-4">
+            @foreach (var apartment in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                @apartment.Apartments
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                @apartment.Id
+                            </p>
+
+                          
+                        </div>
+
+                        <div class="card-footer bg-white border-0">
+                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#imagesModal-@apartment.Id">
+                                View Images
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <div class="modal fade" id="imagesModal-@apartment.Id" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Apartment Images</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="carousel-@apartment.Id" class="carousel slide" data-bs-ride="carousel">
+                                   
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-@apartment.Id" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon"></span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carousel-@apartment.Id" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info text-center">
+            No apartments found.
+        </div>
+    }
+</div>
+
