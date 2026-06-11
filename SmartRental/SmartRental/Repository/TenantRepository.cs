@@ -25,6 +25,12 @@ namespace SmartRental.Repository
         {
             return await _context.Tenants.ToListAsync();
         }
+        public async Task<Tenant?> GetByAppUserIdAsync(string appUserId)
+        {
+            return await _context.Tenants
+                .Include(t => t.University)
+                .FirstOrDefaultAsync(t => t.AppUserId == appUserId);
+        }
 
         public async Task<Tenant> GetByIdAsync(int id)
        => await _context.Tenants.FindAsync(id);

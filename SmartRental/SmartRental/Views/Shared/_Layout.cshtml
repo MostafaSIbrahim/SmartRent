@@ -70,9 +70,11 @@
 
                 }
 
+             
                 <a class="sr-link"
-                   asp-controller="Owner"
-                   asp-action="OwnerIndex">
+                   asp-controller="Home"
+                   asp-action="Index"
+                   asp-fragment="properties">
                     Properties
                 </a>
 
@@ -89,9 +91,16 @@
                 @if (User?.Identity != null &&
                                 User.Identity.IsAuthenticated)
                 {
-                    <span class="sr-link">
+                    @* <span class="sr-link">
                         @User.Identity.Name
-                    </span>
+                    </span> *@
+                    <a class="sr-link"
+                       asp-controller="Profile"
+                       asp-action="Index">
+
+                        @User.Identity.Name
+
+                    </a>
 
                     <form asp-controller="Account"
                           asp-action="Logout"

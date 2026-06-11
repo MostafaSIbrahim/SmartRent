@@ -14,22 +14,28 @@ namespace SmartRental.Controllers
         private readonly SignInManager<AppUser> _signInManager;
         private readonly IOwnerRepository _ownerRepository;
         private readonly ITenantRepository _tenantRepository;
+        private readonly IUniverisityRepository _universityRepository;
 
         public AccountController(
             UserManager<AppUser> userManager,
             SignInManager<AppUser> signInManager,
             IOwnerRepository ownerRepository,
-            ITenantRepository tenantRepository)
+            ITenantRepository tenantRepository,
+            IUniverisityRepository universityRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _ownerRepository = ownerRepository;
             _tenantRepository = tenantRepository;
+            _universityRepository = universityRepository;
         }
 
         [HttpGet]
-        public IActionResult Register()
+        public async Task<IActionResult> Register()
         {
+            ViewBag.Universities =
+                await _universityRepository.GetAllAsync();
+
             return View();
         }
 
@@ -37,14 +43,25 @@ namespace SmartRental.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterDTO registerDTO)
         {
+           
             if (!ModelState.IsValid)
+            {
+                ViewBag.Universities =
+                    await _universityRepository.GetAllAsync();
+
                 return View(registerDTO);
+            }
 
             // Check if email already exists
             var existingUser = await _userManager.FindByEmailAsync(registerDTO.Email);
+           
             if (existingUser != null)
             {
                 ModelState.AddModelError(string.Empty, "Email is already in use.");
+
+                ViewBag.Universities =
+                    await _universityRepository.GetAllAsync();
+
                 return View(registerDTO);
             }
 
@@ -67,10 +84,14 @@ namespace SmartRental.Controllers
             // Create user in Identity
             var result = await _userManager.CreateAsync(user, registerDTO.Password);
 
+           
             if (!result.Succeeded)
             {
                 foreach (var error in result.Errors)
                     ModelState.AddModelError(string.Empty, error.Description);
+
+                ViewBag.Universities =
+                    await _universityRepository.GetAllAsync();
 
                 return View(registerDTO);
             }
@@ -93,9 +114,14 @@ namespace SmartRental.Controllers
             }
             else if (registerDTO.Role == "Tenant")
             {
+              
                 if (!registerDTO.UniversityId.HasValue)
                 {
                     ModelState.AddModelError(string.Empty, "University is required for tenants.");
+
+                    ViewBag.Universities =
+                        await _universityRepository.GetAllAsync();
+
                     return View(registerDTO);
                 }
 

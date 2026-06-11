@@ -99,6 +99,28 @@
                       class="text-danger"></span>
 
             </div>
+            <div id="universityContainer" style="display:none">
+
+                <select asp-for="UniversityId"
+                        class="sr-input">
+
+                    <option value="">
+                        Select University
+                    </option>
+
+                    @foreach (var university in ViewBag.Universities)
+                    {
+                        <option value="@university.Id">
+                            @university.Name
+                        </option>
+                    }
+
+                </select>
+
+                <span asp-validation-for="UniversityId"
+                      class="text-danger"></span>
+
+            </div>
 
             <input type="hidden"
                    asp-for="Photo"
@@ -125,4 +147,33 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const tenantRadio =
+                document.querySelector('input[value="Tenant"]');
+
+            const universityContainer =
+                document.getElementById("universityContainer");
+
+            const roleRadios =
+                document.querySelectorAll('input[name="Role"]');
+
+            function toggleUniversity() {
+
+                if (tenantRadio.checked)
+                    universityContainer.style.display = "block";
+                else
+                    universityContainer.style.display = "none";
+            }
+
+            roleRadios.forEach(r => {
+                r.addEventListener("change", toggleUniversity);
+            });
+
+            toggleUniversity();
+        });
+
+    </script>
 }

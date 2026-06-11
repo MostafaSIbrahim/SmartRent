@@ -11,5 +11,6 @@ namespace SmartRental.Repository
         public void Update(Tenant entity);
         public void Delete(Tenant entity);
         Task<int> SaveChangesAsync();
+        Task<Tenant?> GetByAppUserIdAsync(string appUserId);
     }
 }

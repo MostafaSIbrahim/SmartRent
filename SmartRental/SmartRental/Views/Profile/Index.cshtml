@@ -1,0 +1,87 @@
+﻿@model SmartRental.ViewModel.ProfileVM
+@{
+    var photoPath = string.IsNullOrEmpty(Model.Photo)
+                    || Model.Photo == "ر"
+                    ? "/images/default-user.png"
+                    : $"/images/{Model.Photo}";
+}
+<div class="profile-page">
+
+    <div class="profile-cover"></div>
+
+    <div class="profile-card">
+
+        <div class="profile-header">
+
+       @*      <img src="~/images/@Model.Photo"
+                 class="profile-image" /> *@
+            <img src="@photoPath"
+                 class="profile-image" />
+
+            <h2>@Model.Name</h2>
+
+            <span class="role-badge">
+                @Model.Role
+            </span>
+
+        </div>
+
+        <div class="profile-content">
+
+            <div class="profile-info-grid">
+
+                <div class="profile-info">
+
+                    <div class="info-item">
+                        <label>Name</label>
+                        <p>@Model.Name</p>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Email</label>
+                        <p>@Model.Email</p>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Role</label>
+                        <p>@Model.Role</p>
+                    </div>
+
+                </div>
+
+                <div class="profile-info">
+
+                    <div class="info-item">
+                        <label>National ID</label>
+                        <p>@Model.NationalID</p>
+                    </div>
+
+                    @if (Model.Phones != null)
+                    {
+                        <div class="info-item">
+                            <label>Phone Numbers</label>
+
+                            @foreach (var phone in Model.Phones)
+                            {
+                                <p>@phone</p>
+                            }
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(Model.UniversityName))
+                    {
+                        <div class="info-item">
+                            <label>University</label>
+                            <p>@Model.UniversityName</p>
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

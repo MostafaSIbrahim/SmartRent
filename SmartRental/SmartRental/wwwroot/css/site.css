@@ -795,3 +795,77 @@ main {
     margin-bottom: 10px;
     font-weight: 600;
 }
+/* ================= Profile ================= */
+.profile-page {
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.profile-cover {
+    height: 220px;
+    border-radius: 20px;
+    background: linear-gradient(135deg,#4158D0,#C850C0);
+}
+
+.profile-card {
+    background: white;
+    margin-top: -80px;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 25px rgba(0,0,0,.1);
+}
+
+.profile-header {
+    text-align: center;
+}
+
+.profile-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin-top: -100px;
+    object-fit: cover;
+}
+
+.role-badge {
+    display: inline-block;
+    background: #4158D0;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 30px;
+}
+
+
+.profile-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-item {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #eee;
+}
+
+    .info-item label {
+        display: block;
+        font-weight: 600;
+        color: #666;
+        margin-bottom: 8px;
+    }
+
+    .info-item p {
+        margin: 0;
+        font-size: 17px;
+        color: #222;
+    }
